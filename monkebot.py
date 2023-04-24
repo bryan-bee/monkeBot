@@ -2,7 +2,6 @@ import discord
 
 
 def run_discord_bot():
-    TOKEN = 'MTA5Nzk3ODQyMDE0ODgzODQyMA.Gi3QzM.ZFz337Yp1m0VKiitqTjXnoMsXpTbjKKYvR_p00'
     intents = discord.Intents.default()
     intents.messages = True
     client = discord.Client(intents=intents)
