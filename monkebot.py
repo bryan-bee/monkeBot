@@ -2,11 +2,15 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 import openai
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 trigger1 = ["i'm", "im", "i;m", "lm", "l'm", "i am", "i’m"]
 trigger2 = ["omg", "omg...", "omg.", "omg..", "christ", "shit", "god", "wtf"]
 
-openai.api_key = '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'
+openai.api_key = os.getenv('OPEN_AI')
 
 def run_discord_bot():
     intents = discord.Intents.default()
@@ -76,5 +80,4 @@ def run_discord_bot():
                     await message.channel.send("Hello " + phrase + " , I'm monke bot OOO OOO AHH AHH")
                     return
 
-
-    client.run('MTA5Nzk3ODQyMDE0ODgzODQyMA.GxE7Dj.K8VMk_60Q9AaWyp834VvaupOfp-QL5GPtxc_rc')
+    client.run(os.getenv('MONKEY_KEY'))
